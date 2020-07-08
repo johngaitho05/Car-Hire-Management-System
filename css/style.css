@@ -1,49 +1,77 @@
 
 body{
-    background: #e5e5e5;
-}
-#sidemenu{
-    background-color:cornsilk;height:500px;width:20%; float:left;
+    background: #ebece95c;
 }
 body {
     margin: 0;
 }
-#mainNavBar li:nth-of-type(1){
-    margin-top: 70px;
-}
-.wrapper{
-    width:80%; float:left;height: 100%;position: relative;   margin-top: 100px;margin-top: 40px;
-}
-#imageCarousel img{
-    height: 620px;width:100%;
-}
+
+/*MAIN NAVBAR STYLES*/
 .navbar{
-   background-color: lightgreen; 
+    background-color: #fff;
+    width: calc(100% - 20rem);
+    margin-left:auto;
+    height: 60px;
+    border:none;
 }
 .navbar-default .navbar-nav > li > a {
     color: azure;
 }
-.avatar{
-     border-radius: 50%;
-     margin-left:0;
-     height:30px;
-     width:30px;
- }
- .navbar ul:nth-of-type(2) li:nth-of-type(1){
-     margin-right: 100px;
- }
- #logo{
-     font-size: 24px; font-family: fantasy;
- }
- .login{
-     margin-top: 30%; color: #1b6d85;
- }
- .login h3{
-    color:white;
- }
- .grp1{
-     width:300px;
- }
- #searchform{
-    padding-left: 170px;
+
+#searchform button{
+    margin-left: -5px;
+    border-radius: 0 5px 5px 0;
 }
+#searchform input{
+    min-width: 320px;
+    background-color: #f8f9fc !important;
+    border-radius: 5px 0  0 5px;
+}
+/*SIDE MENUBAR STYLES*/
+#sidemenu{
+    background-color: #244180;
+    background-image:linear-gradient(180deg,#244180 10%,#202d84 100%);
+    background-size: cover;
+    min-height: 100vh;
+    width:20rem;
+    float:left;
+}
+/*CONTENT AREA STYLES*/
+.wrapper{
+    width: calc(100% - 20rem);
+    float:left;
+    height: 100%;
+    position:relative;
+    margin-top: 60px;
+    border-top:1px solid #e5e5e5;;
+
+}
+.btn-add{
+    background-color: #5c9eb8;
+    border-color:#5c9eb8;
+}
+#imageCarousel img{
+    height: 620px;width:100%;
+}
+.avatar{
+    border-radius: 50%;
+    margin-left:0;
+    height:30px;
+    width:30px;
+}
+.navbar ul:nth-of-type(2) li:nth-of-type(1){
+    margin-right: 100px;
+}
+#logo{
+    font-size: 24px; font-family: fantasy;
+}
+.login{
+    margin-top: 30%; color: #1b6d85;
+}
+.login h3{
+    color:white;
+}
+.grp1{
+    width:300px;
+}
+
