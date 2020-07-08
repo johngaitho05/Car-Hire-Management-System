@@ -6,12 +6,13 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/bootstrap.css" />
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/style.css" />
-
-
     </head>
     <body>
         
@@ -27,12 +28,12 @@ and open the template in the editor.
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li id ="logo"><a href="login.php">JCars</a></li>
+                    <li id ="logo"><a href="home.php">JCars</a></li>
                 </ul>
-            <form action="search" class="navbar-form navbar-left" id ="frmone">
+            <form action="search.php" class="navbar-form navbar-left" id ="searchform" method="post">
                 <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Search"/>
-                <button class="btn btn-default">Search</button> 
+                <input type="text" class="form-control" placeholder="Enter ID Number" name="idnum"/>
+                <button type="submit" class="btn btn-default">Search</button> 
                 </div>
             </form>
                 <ul class="nav navbar-nav navbar-right">
@@ -58,27 +59,35 @@ and open the template in the editor.
               </div>
          </header>
         <div class="wrapper">
-<!-- the data-interval attribute is optional, if not specified the default value is applied (5000 milliseconds/ 5 secs)
-to activate carouse without writing Javascript code, on the parent div use the data-ride attribute and set it to carousel
-setting 'data-pause' attribute="false" to disable pause on hover (by default it's set to true)
-setting data-wrap attribute="false" enables the slide-show to stop at the last slide(no repeat)_(by default it's set to true)
-setting  data-interval attribute to false disables automatic flip(slide show) such that next/previous slide can only be accessed by clicking on the carousel-controls --> 
     <div id="imageCarousel" class="carousel slide" data-interval="2000">
     <ol class="carousel-indicators">
     <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#imageCarousel" data-slide-to="1"></li>
     <li data-target="#imageCarousel" data-slide-to="2"></li>
+    <li data-target="#imageCarousel" data-slide-to="3"></li>
+    <li data-target="#imageCarousel" data-slide-to="4"></li>
+    <li data-target="#imageCarousel" data-slide-to="5"></li>
+    <li data-target="#imageCarousel" data-slide-to="6"></li>
     </ol>
     <div class="carousel-inner">
     <div class="item active">
-        <img src="img/1.jpg" alt=""/>
+        <img src="img/pic1.jpg" alt=""/>
     </div>
     <div class="item">
-        <img src="img/3.jpg" alt=""/>
+        <img src="img/pic2.jpg" alt=""/>
     </div>
     <div class="item">
-        <img src="img/2.jpg" alt=""/>
+        <img src="img/pic3.jpg" alt=""/>
     </div>
+    <div class="item">
+        <img src="img/pic5.jpg" alt=""/>
+    </div>
+    <div class="item">
+        <img src="img/pic4.jpg" alt=""/>
+    </div>
+    <div class="item">
+        <img src="img/pic6.jpg" alt=""/>
+    </div>    
     </div>
     <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>  
@@ -95,3 +104,4 @@ setting  data-interval attribute to false disables automatic flip(slide show) su
         </script>
     </body>
 </html>
+

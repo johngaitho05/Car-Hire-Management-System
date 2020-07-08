@@ -4,7 +4,6 @@ require_once "dbconfig.php";
  
 // Define variables and initialize with empty values
 $num = $model = $price = "";
-$status = "Not hired";
 $num_err = $model_err = $price_err = "";
  
 // Processing form data when form is submitted
@@ -38,16 +37,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($num_err) && empty($model_err) && empty($price_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO vehicles(Vehicle_No,Model,Lending_Price) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO vehicles(Vehicle_No, Model, Lending_Price, Status) VALUES(?, ?, ?, ?)";
  
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("sss", $param_num, $param_model, $param_price);
+            $stmt->bind_param("ssss", $param_num, $param_model, $param_price, $param_status);
             
             // Set parameters
             $param_num = $num;
             $param_model = $model;
             $param_price = $price;
+            $param_status = "Not Hired";
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -57,14 +57,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             } else{
                 echo "Something went wrong. Please try again later.";
             }
-        }
-         
-        // Close statement
+            // Close statement
         $stmt->close();
+        }
+           $mysqli->close();
+  
+        
     }
-    
+    else{
+        exit("Missing input");
+    }
     // Close connection
-    $mysqli->close();
 }
 ?>
 
@@ -81,6 +84,9 @@ and open the template in the editor.
     <link rel="stylesheet" href="css/bootstrap.css" />
         <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/style.css" />
     <style type="text/css">
         .wrapper2{
@@ -102,7 +108,16 @@ and open the template in the editor.
     </script>
 </head>
     <body>
-        
+        <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // Validate name
+    $input_num = trim($_POST["idnum"]);
+    if(!empty($input_num)){
+        $num= $input_num;
+        header("location: search.php?idnum=$num");
+    }
+    }
+    ?>
         <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -115,12 +130,12 @@ and open the template in the editor.
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li id ="logo"><a href="#">JCars</a></li>
+                    <li id ="logo"><a href="home.html">JCars</a></li>
                 </ul>
-            <form action="search" class="navbar-form navbar-left" id ="frmone">
+            <form  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="navbar-form navbar-left" id ="searchform" method="post">
                 <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Search"/>
-                <button class="btn btn-default">Search</button> 
+                    <input type="text" class="form-control" placeholder="Enter ID Number" name="idnum"/>
+                <input type="submit" class="btn btn-default" value="Search">
                 </div>
             </form>
                 <ul class="nav navbar-nav navbar-right">
@@ -135,7 +150,7 @@ and open the template in the editor.
               <div id = "sidemenu">
                  <nav id="mainNavBar">
                 <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200"> <!--the affix class sets the position to fixed but you have to manually specify at what point you want it fixed-->
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.php">Home</a></li>
                     <li class="active"><a href="vehicles.php">Manage Vehicles</a></li>
                     <li><a href="clients.php">Manage Clients</a></li>
                 </ul>
