@@ -6,12 +6,10 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link rel="stylesheet" href="css/bootstrap.css" />
-        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
@@ -35,63 +33,58 @@ and open the template in the editor.
                             </button> 
                         </div>
                     </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="#"><img src="img/man.png" alt="avatar" class="avatar"> John</a></li>
-                        <li><a href="login.php">Logout</a></li>
-                    </ul>   
+                    <div class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/man.png" alt="avatar" class="avatar"/>John Gaitho <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-wrench"></span>Settings</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
         </nav>
         
         <header>
             <div id = "sidemenu">
-                <nav id="mainNavBar">
-                    <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200"> 
-                        <li class="active"><a href="home.php">Home</a></li>
-                        <li><a href="vehicles.php">Manage Vehicles</a></li>
-                        <li><a href="clients.php">Manage Clients</a></li>
+                <a class="sidebar-brand" href="home.php"><span class="glyphicon glyphicon-paperclip "></span>JCars Admin</a>
+                <hr />
+                <section>
+                    <ul class="section-items">
+                        <li class="active"><a id="dashboard-link" href="#"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
                     </ul>
-                </nav> 
+                </section>
+                <hr />
+                <section>
+                    <p class="section-decriptor">Interface</p>
+                    <ul class="section-items">
+                        <li><a href="vehicles.php"><i class="fas fa-car"></i>Vehicles <i class="fas fa-angle-right pull-right"></i></a></li>
+                        <li><a href="clients.php"><i class="fas fa-users"></i>Clients<i class="fas fa-angle-right pull-right"></i></a></li>
+                        <li><a href="#"><i class="fas fa-dollar-sign"></i>Account<i class="fas fa-angle-right pull-right"></i></a></li>
+                    </ul>
+                </section>
+                <hr />
+                <section>
+                    <p class="section-decriptor">Addons</p>
+                    <ul class="section-items">
+                        <li><a href="#"><i class="fas fa-fw fa-chart-area"></i>Charts</a></li>
+                        <li><a href="#"><i class="fas fa-table"></i>Tables</a></li>
+                    </ul>
+                </section>
+                <hr />
+                <!--<section>-->
+                <div class="sidenav-toggler">
+                    <i class="fas fa-angle-left"></i>
+                </div>
             </div>
         </header>
         <div class="wrapper">
-            <div id="imageCarousel" class="carousel slide" data-interval="2000">
-                <ol class="carousel-indicators">
-                    <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#imageCarousel" data-slide-to="1"></li>
-                    <li data-target="#imageCarousel" data-slide-to="2"></li>
-                    <li data-target="#imageCarousel" data-slide-to="3"></li>
-                    <li data-target="#imageCarousel" data-slide-to="4"></li>
-                    <li data-target="#imageCarousel" data-slide-to="5"></li>
-                    <li data-target="#imageCarousel" data-slide-to="6"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="img/pic1.jpg" alt=""/>
-                    </div>
-                    <div class="item">
-                        <img src="img/pic2.jpg" alt=""/>
-                    </div>
-                    <div class="item">
-                        <img src="img/pic3.jpg" alt=""/>
-                    </div>
-                    <div class="item">
-                        <img src="img/pic5.jpg" alt=""/>
-                    </div>
-                    <div class="item">
-                        <img src="img/pic4.jpg" alt=""/>
-                    </div>
-                    <div class="item">
-                        <img src="img/pic6.jpg" alt=""/>
-                    </div>    
-                </div>
-                <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>  
-                </a>
-                <a href="#imageCarousel" class="carousel-control right" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div>
+            <div class="info-card"></div>
+            <div class="info-card"></div>
+            <div class="info-card"></div>
         </div>
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script> 
         <script type="text/javascript">
             $(document).ready(function(){
                 $(imageCarousel).carousel();   
