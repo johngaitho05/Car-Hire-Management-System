@@ -51,7 +51,7 @@ and open the template in the editor.
             <div class="wrapper2">
                 <div class="page-header clearfix">
                     <h2 class="pull-left">Clients Details</h2>
-                    <a href="add_client.php" class="btn btn-success pull-right">Add new Client</a>
+                    <a href="add_client.php" class="btn-add btn btn-success pull-right">Add new Client</a>
                 </div>
                     <?php
                     // Include config file

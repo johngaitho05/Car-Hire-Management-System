@@ -44,7 +44,7 @@
                 <hr />
                 <section>
                     <ul class="section-items">
-                        <li class="active"><a id="dashboard-link" href="#"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li class="active"><a id="dashboard-link" href="home.php"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
                     </ul>
                 </section>
                 <hr />

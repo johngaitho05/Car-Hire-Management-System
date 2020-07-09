@@ -13,7 +13,6 @@ and open the template in the editor.
         <script type="text/javascript" src="js/bootstrap.js"></script> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
         <link rel="stylesheet" href="css/style.css" />
         <style type="text/css">
@@ -48,7 +47,7 @@ and open the template in the editor.
             <div class="wrapper2">
                 <div class="page-header clearfix">
                     <h2 class="pull-left">Vehicles Details</h2>
-                    <a href="add_vehicle.php" class="btn-add btn btn-info pull-right">Add new Vehicle</a>
+                    <a href="add_vehicle.php" class="btn-add btn btn-info pull-right">Add a vehicle</a>
                 </div>
                     <?php
                     // Include config file
@@ -58,7 +57,7 @@ and open the template in the editor.
                     $sql = "SELECT * FROM vehicles";
                     if($result = $mysqli->query($sql)){
                         if($result->num_rows > 0){
-                            echo "<table class='table table-bordered table-striped'>";
+                            echo "<table class='table table-bordered table-hover'>";
                                 echo "<thead>";
                                     echo "<tr>";
                                     echo "<th>ID</th>";

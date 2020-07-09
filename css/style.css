@@ -162,6 +162,7 @@ section i{
     top: 0px;
     right:3rem;
 }
+
 .info-card{
     padding: 5px;
     width: 100%;
@@ -213,12 +214,6 @@ section i{
     font-size:1.8rem;
     font-weight: 700;
 }
-
-.btn-add{
-    background-color: #5c9eb8;
-    border-color:#5c9eb8;
-}
-
 
 
 /*Charts styles*/
@@ -356,3 +351,11 @@ section i{
 }
 
 
+/*VEHICLE PAGE STYLES*/
+.btn-add{
+    background-color: #5c9eb8;
+    border-color:#5c9eb8;
+}
+table{
+    background: #fff;
+}
