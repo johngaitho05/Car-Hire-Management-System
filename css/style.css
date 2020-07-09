@@ -151,15 +151,69 @@ section i{
     height: 100%;
     position:relative;
     margin-top: 60px;
-    border-top:1px solid #e5e5e5;;
+    border-top:1px solid #e5e5e5;
+    padding: 30px;
+    /*display:flex;*/
 
 }
+.page-title{
+    width:100%;
+    /*margin-left: 100px;*/
+}
+.info-card{
+    padding: 5px;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    margin: 10px 0;
+    border-radius:0.35rem
+}
+
+.info-card.hired{
+    border-left:0.5rem solid #ca2819;
+}
+.info-card.hired .info-card-heading{
+    color:#ca2819;
+}
+.info-card.available{
+    border-left:0.5rem solid #c583be;
+}
+.info-card.available .info-card-heading{
+    color:#c583be;
+}
+.info-card.earnings{
+    border-left:0.5rem solid #1cc88a;
+}
+.info-card.earnings .info-card-heading{
+    color:#1cc88a;
+}
+.info-card.served{
+    border-left:0.5rem solid #36b9cc;
+}
+.info-card.served .info-card-heading{
+    color:#36b9cc;
+}
+
+.info-card-icon{
+    width:70px;
+    float:left;
+    height:50px;
+    color:#dddfeb !important;
+    font-size: 3rem;
+}
+.info-card-heading{
+    font-weight:700;
+    text-transform:uppercase;
+}
+.info-card-amount{
+    color:#5a5c69;
+    font-size:1.8rem;
+    font-weight: 700;
+}
+
 .btn-add{
     background-color: #5c9eb8;
     border-color:#5c9eb8;
-}
-#imageCarousel img{
-    height: 620px;width:100%;
 }
 
 
